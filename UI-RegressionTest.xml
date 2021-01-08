@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <test name="ChromeTest">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="url" value="https://the-internet.herokuapp.com"/>
+        <classes>
+            <class name="alert.AlertTests"/>
+            <class name="dropdown.DropDownTests"/>
+            <class name="fileUpload.FileUploadTests"/>
+            <class name="frames.FrameTest"/>
+            <class name="hover.HoverTests"/>
+            <class name="javascript.JavaScriptTest"/>
+            <class name="keys.KeysTests"/>
+            <class name="login.LoginTests"/>
+            <class name="navigation.NavigationTest"/>
+            <class name="wait.WaitTest"/>
+        </classes>
+    </test>
+
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="url" value="https://the-internet.herokuapp.com"/>
+        <classes>
+            <class name="alert.AlertTests"/>
+            <class name="dropdown.DropDownTests"/>
+            <class name="fileUpload.FileUploadTests"/>
+            <class name="frames.FrameTest"/>
+            <class name="hover.HoverTests"/>
+            <class name="javascript.JavaScriptTest"/>
+            <class name="keys.KeysTests"/>
+            <class name="login.LoginTests"/>
+            <class name="navigation.NavigationTest"/>
+            <class name="wait.WaitTest"/>
+        </classes>
+    </test>
+</suite>

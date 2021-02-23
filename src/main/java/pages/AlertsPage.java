@@ -10,32 +10,40 @@ public class AlertsPage {
     private final By triggerConfirmButton = By.xpath(".//button[text()='Click for JS Confirm']");
     private final By triggerPromptButton = By.xpath(".//button[text()='Click for JS Prompt']");
 
-    public AlertsPage(WebDriver driver){
+    public AlertsPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void triggerAlert(){
+
+    public void triggerAlert() {
         driver.findElement(triggerAlertButton).click();
     }
-    public void alert_clickToAccept(){
+
+    public void alert_clickToAccept() {
         driver.switchTo().alert().accept();
     }
-    public void alert_clickToDismiss(){
+
+    public void alert_clickToDismiss() {
         driver.switchTo().alert().dismiss();
     }
-    public String getResult(){
+
+    public String getResult() {
         return driver.findElement(results).getText();
     }
-    public void triggerConfirm(){
+
+    public void triggerConfirm() {
         driver.findElement(triggerConfirmButton).click();
     }
-    public String alert_getText(){
+
+    public String alert_getText() {
         return driver.switchTo().alert().getText();
     }
-    public void triggerPrompt(){
+
+    public void triggerPrompt() {
         driver.findElement(triggerPromptButton).click();
     }
-    public void  alert_setInput(String text){
-      driver.switchTo().alert().sendKeys(text);
+
+    public void alert_setInput(String text) {
+        driver.switchTo().alert().sendKeys(text);
     }
 
 }

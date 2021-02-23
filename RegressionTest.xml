@@ -20,7 +20,7 @@
     </test>
 
     <test name="FirefoxTest">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browser" value="Firefox"/>
         <parameter name="url" value="https://the-internet.herokuapp.com"/>
         <classes>
             <class name="alert.AlertTests"/>

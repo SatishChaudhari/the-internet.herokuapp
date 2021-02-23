@@ -16,6 +16,7 @@ import utils.WindowManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 
 public class BaseTests {
@@ -28,23 +29,28 @@ public class BaseTests {
     public void setUp(String browser, String url) {
 
         switch (browser) {
-            case "chrome":
+            case "Chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
-            case "firefox":
+            case "Firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
+                break;
             case "ChromeOptions": //Chrome Headless Browser
                 WebDriverManager.chromiumdriver().setup();
                 driver = new ChromeDriver(getChromeOptions());
+                break;
             case "FirefoxOptions": // Firefox Headless Browser
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver(getFirefoxOptions());
+                break;
 
         }
         goHome(url);
         homePage = new HomePage(driver);
+      //  driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
@@ -86,6 +92,7 @@ public class BaseTests {
 
     /**
      * Using Options for setup a headless browser
+     *
      * @return options
      */
 
@@ -94,7 +101,8 @@ public class BaseTests {
         options.setHeadless(true);
         return options;
     }
-    private FirefoxOptions getFirefoxOptions(){
+
+    private FirefoxOptions getFirefoxOptions() {
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
         return options;

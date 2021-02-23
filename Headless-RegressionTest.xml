@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
 
-    <test name="chrome-Headless Test">
+    <test name="Chrome-Headless Test">
         <parameter name="browser" value="ChromeOptions"/>
         <parameter name="url" value="https://the-internet.herokuapp.com"/>
         <classes>
@@ -19,7 +19,7 @@
         </classes>
     </test>
 
-    <test name="firefox-Headless Test">
+    <test name="Firefox-Headless Test">
         <parameter name="browser" value="FirefoxOptions"/>
         <parameter name="url" value="https://the-internet.herokuapp.com"/>
         <classes>
